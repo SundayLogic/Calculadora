@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Definimos los tipos de valores que los botones pueden tener
-type ButtonValue =
+type ValorBoton =
   | "0"
   | "1"
   | "2"
@@ -21,14 +21,14 @@ type ButtonValue =
 const Calculadora: React.FC = () => {
   const [resultado, setResultado] = useState<string>("0");
 
-  // Esta función maneja lo que sucede cuando se hace clic en un botón
-  const handleButtonClick = (value: ButtonValue): void => {
+  // Esta función maneja lo que sucede cuando se hace click en un botón
+  const manejarClickBoton = (valor: ValorBoton): void => {
     // Si el resultado es "0" o "Error", el resultado se convierte en el valor del botón
     // De lo contrario, agregamos el valor del botón al resultado actual
     if (resultado === "0" || resultado === "Error") {
-      setResultado(value);
+      setResultado(valor);
     } else {
-      setResultado(resultado + value);
+      setResultado(resultado + valor);
     }
   };
 
@@ -42,15 +42,18 @@ const Calculadora: React.FC = () => {
       setResultado("Error");
     }
   };
+
   // Esta función se encarga de restablecer el resultado a "0"
-  const reset = (): void => {
+  const resetear = (): void => {
     setResultado("0");
   };
-  // El componente de la calculadora que se renderiza en la pági
+
+  // El componente de la calculadora que se renderiza en la página
   return (
     <table className="table-fixed border-collapse w-[30vw] rou">
       <tbody>
         <tr className="bg-black text-white">
+          {/* Mostrando el resultado */}
           <td
             colSpan={4}
             className="border border-black p-2 text-4xl font-sans text-right"
@@ -59,35 +62,41 @@ const Calculadora: React.FC = () => {
           </td>
         </tr>
         <tr className="bg-slate-100">
-          {["7", "8", "9", "*"].map((value, index) => (
+          {/* Para cada fila, mapeamos un array de valores de botones y creamos una celda para cada uno */}
+          {["7", "8", "9", "*"].map((valor, indice) => (
             <td
-              key={index}
+              key={indice}
               className="border border-black p-2 text-4xl font-sans text-center cursor-pointer"
-              onClick={() => handleButtonClick(value as ButtonValue)}
+              onClick={() => manejarClickBoton(valor as ValorBoton)}
             >
-              {value}
+              {/* Cuando se hace clic en un botón, llamamos a la función manejarClickBoton con el valor del botón */}
+              {valor}
             </td>
           ))}
         </tr>
         <tr className="bg-slate-100">
-          {["4", "5", "6", "-"].map((value, index) => (
+          {/* Para cada fila, mapeamos un array de valores de botones y creamos una celda para cada uno */}
+          {["4", "5", "6", "-"].map((valor, indice) => (
             <td
-              key={index}
+              key={indice}
               className="border border-black p-2 text-4xl font-sans text-center cursor-pointer"
-              onClick={() => handleButtonClick(value as ButtonValue)}
+              onClick={() => manejarClickBoton(valor as ValorBoton)}
             >
-              {value}
+              {/* Cuando se hace clic en un botón, llamamos a la función manejarClickBoton con el valor del botón */}
+              {valor}
             </td>
           ))}
         </tr>
         <tr className="bg-slate-100">
-          {["1", "2", "3", "+"].map((value, index) => (
+          {/* Para cada fila, mapeamos un array de valores de botones y creamos una celda para cada uno */}
+          {["1", "2", "3", "+"].map((valor, indice) => (
             <td
-              key={index}
+              key={indice}
               className="border border-black p-2 text-4xl font-sans text-center cursor-pointer"
-              onClick={() => handleButtonClick(value as ButtonValue)}
+              onClick={() => manejarClickBoton(valor as ValorBoton)}
             >
-              {value}
+              {/* Cuando se hace clic en un botón, llamamos a la función manejarClickBoton con el valor del botón */}
+              {valor}
             </td>
           ))}
         </tr>
@@ -95,21 +104,21 @@ const Calculadora: React.FC = () => {
           <td
             colSpan={2}
             className="border border-black p-2 text-4xl font-sans text-center cursor-pointer"
-            onClick={() => handleButtonClick("0")}
+            onClick={() => manejarClickBoton("0")}
           >
             0
           </td>
           <td
             className="border border-black p-2 text-4xl font-sans text-center cursor-pointer bg-orange-400"
-            onClick={reset}
+            onClick={resetear}
           >
-            R
+            {/* El botón "R" llama a la función resetear */}R
           </td>
           <td
             className="border border-black p-2 text-4xl font-sans text-center cursor-pointer"
             onClick={calcular}
           >
-            =
+            {/* El botón "=" llama a la función calcular */}=
           </td>
         </tr>
       </tbody>
