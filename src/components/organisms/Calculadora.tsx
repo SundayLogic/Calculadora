@@ -50,7 +50,7 @@ const Calculadora: React.FC = () => {
 
   // El componente de la calculadora que se renderiza en la página
   return (
-    <table className="table-fixed border-collapse w-[30vw] rou">
+    <table className="table-fixed border-collapse w-[30vw]">
       <tbody>
         <tr className="bg-black text-white">
           {/* Mostrando el resultado */}
