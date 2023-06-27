@@ -1,4 +1,4 @@
-import {describe, test, expect} from "vitest"
+import {describe, test, expect} from "vitest";
 
 describe("Calculadora", () => {
     test("Sumar dos numeros", () => {
