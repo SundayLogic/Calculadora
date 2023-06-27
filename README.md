@@ -1,54 +1,72 @@
-# Calculadora Prueba
+# Prueba de Calculadora
 
-## Description
-Kodak is a TypeScript-based project focusing on building an application using Next.js, React, and other modern web technologies. The project has a structured approach based on atomic design principles with different components divided into atoms, molecules, organisms, pages, and templates.
+## Descripción
+Este proyecto es una calculadora básica construida con React y Typescript. Permite realizar operaciones matemáticas y muestra los resultados al usuario. La lógica principal está contenida en el componente Calculadora, que gestiona el estado de la operación actual. La interfaz de usuario consta de una tabla que representa los botones de la calculadora. Para asegurar su correcto funcionamiento, el proyecto incluye pruebas con el framework Vitest. Es un ejemplo práctico del uso de React para crear aplicaciones interactivas con estado dinámico.
 
+![Calculadora](src/assets/images/calculadora.png) 
 
-## Installation Instructions
-To get started with the Kodak project, follow these steps:
-1. Clone the repository:
+## Estructura de carpetas
+El componente de calculadora se encuentra dentro de: componentes -> organismos -> Calculadora.tsx
+
+![Calculadora](src/assets/images/Calculadora.png) 
+
+## Instrucciones de Instalación
+Para empezar con el proyecto Calculadora, sigue estos pasos:
+1. Clona el repositorio:
 ```bash
-git clone https://github.com/SundayLogic/Kodak.git
+git clone https://github.com/SundayLogic/Calculadora.git
 ```
-2. Navigate to the project directory:
+2. Navega al directorio del proyecto:
 ```bash
-cd Kodak
+cd Calculadora
 ```
-3. Install the necessary dependencies:
+3. Instala las dependencias necesarias:
 ```bash
 npm install
 ```
-or if you are using yarn:
+o si usas yarn:
 ```bash
 yarn install
 ```
-## Usage/Code Examples
-Once the installation is complete, you can run the following commands:
+## Uso/Ejemplos de código
+Una vez completada la instalación, puedes ejecutar los siguientes comandos:
 
-&middot; To start the development server:
+&middot; Para iniciar el servidor de desarrollo:
 ```bash
 npm run dev
 ```
-or
+o
 ```bash
 yarn dev
 ```
-&middot; To build the application:
+&middot; Para construir la aplicación:
 ```bash
 npm run build
 ```
-or
+o
 ```bash
 yarn build
 ```
-&middot; To start the application:
+&middot; Para iniciar la aplicación:
 ```bash
 npm run start
 ```
-or
+o
 ```bash
 yarn start
 ```
-For more detailed usage and code examples, please refer to the individual component directories.
+Para un uso más detallado y ejemplos de código, por favor consulta los directorios individuales de los componentes.
 
+## Test de Prueba
+Para ejecutar las pruebas del componente de la calculadora se abrirá una nueva pestaña donde se verán las pruebas implementadas
 
+![Calculadora](src/assets/images/Test.png) 
+
+&middot; Ejecutar el entorno de desarrollo de pruebas:
+```bash
+npm test
+```
+or
+```bash
+yarn test
+```
